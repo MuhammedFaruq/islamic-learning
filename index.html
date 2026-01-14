@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deen Islam</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- TOP PRAYER BAR (will be updated by JS later) -->
+<div class="top-bar">
+  <div class="container">
+    <div class="prayer-info" id="topPrayer">
+      Loading prayer time…
+    </div>
+    <a href="#" class="link">All Prayer Times →</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="container nav-flex">
+    <div class="logo">Deen Islam</div>
+    <nav>
+      <a href="">Prayer Times</a>
+      <a href="quran.html">Quran</a>
+      <a href="#">Learn</a>
+      <a href="#">Calendar</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-text">
+      <h1>The modern platform for Islamic life</h1>
+      <p>
+        Prayer times, Quran, learning, reminders and tools
+        designed for Muslims worldwide.
+      </p>
+      <a href="#" class="btn-primary">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMY WITH REAL QURAN AUDIO -->
+<section class="academy">
+  <div class="container academy-grid">
+
+    <div>
+      <h2>Learn Quran with guidance</h2>
+      <p>Structured programs for recitation and understanding.</p>
+      <a href="#" class="link">Explore programs →</a>
+    </div>
+
+    <!-- REAL AUDIO PLAYER -->
+    <div class="academy-audio">
+  <div class="audio-player">
+
+    <button id="prevBtn">⏮</button>
+    <button id="playBtn">▶</button>
+    <button id="nextBtn">⏭</button>
+
+    <div class="audio-info">
+      <span id="trackTitle">Surah Al-Fatiha · Ayah 1</span>
+
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+    </div>
+
+    <span id="time">0:00</span>
+  </div>
+
+  <!-- RECITER SELECTOR -->
+  <select id="reciterSelect">
+    <option value="AbdulBaset/Mujawwad">Abdul Baset (Mujawwad)</option>
+    <option value="Mishary_Rashid_Alafasy">Mishary Rashid</option>
+    <option value="Maher_Al_Muaiqly">Maher Al-Muaiqly</option>
+  </select>
+
+  <audio id="quranAudio"></audio>
+</div>
+
+  </div>
+</section>
+
+<!-- FEATURE BLOCKS -->
+<section class="features">
+  <div class="container feature-grid">
+
+    <div class="feature light">
+      <h3>Connect with the Ummah</h3>
+      <p>Community, knowledge and events in one place.</p>
+    </div>
+
+    <div class="feature dark">
+      <h3>Tools for daily worship</h3>
+      <p>Qibla, calendar, duas and reminders.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- BLOG + EVENTS -->
+<section class="info-section">
+  <div class="container info-grid">
+
+    <div class="info-box">
+      <h3>Latest Knowledge</h3>
+      <ul>
+        <li>The importance of Rajab</li>
+        <li>Managing stress Islamically</li>
+        <li>Raising practicing children</li>
+      </ul>
+      <a href="#" class="btn-secondary">See all articles</a>
+    </div>
+
+    <div class="info-box">
+      <h3>Islamic Events</h3>
+      <ul class="events">
+        <li>Shab e Meraj — Jan 17</li>
+        <li>Ramadan — Feb 18</li>
+        <li>Eid ul Fitr — Mar 20</li>
+      </ul>
+      <a href="#" class="btn-secondary">View calendar</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRAYER TIMES (API-DRIVEN) -->
+<section class="prayer-section">
+  <div class="prayer-container">
+    <span class="section-tag">Associated Mosque</span>
+    <h2 class="section-title">Namaz Timings</h2>
+    <div class="divider"></div>
+
+    <div class="prayer-grid" id="prayerGrid">
+      <div class="loading">Loading prayer times…</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Platform</h4>
+      <a href="#">Prayer Times</a>
+      <a href="#">Quran</a>
+      <a href="#">Duas</a>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <a href="#">Qibla</a>
+      <a href="#">Calendar</a>
+      <a href="#">Zakat</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Privacy</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

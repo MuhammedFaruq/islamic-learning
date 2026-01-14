@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Read Quran</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app-layout">
+
+  <aside class="sidebar" id="sidebar">
+  <h3 class="sidebar-logo">IslamicPlatform</h3>
+
+  <nav class="sidebar-nav">
+    <a href="index.html">Home</a>
+    <a href="#">Prayer Times</a>
+    <a href="#">Islamic Calendar</a>
+    <a href="quran.html" class="active">Al Quran</a>
+    <a href="#">Hadith</a>
+    <a href="#">Duas</a>
+    <a href="#">Special Islamic Days</a>
+    <a href="#">Qibla Direction</a>
+    <a href="#">Date Converter</a>
+    <a href="#">Knowledge</a>
+    <a href="#">Islamic Places</a>
+    <a href="#">Zakat Calculator</a>
+  </nav>
+</aside>
+
+<button class="menu-toggle" id="menuToggle">☰</button>
+<div class="overlay" id="overlay"></div>
+
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+
+    <!-- HEADER -->
+    <section class="reader-header">
+      <h1 id="surahTitle">Loading…</h1>
+      <p>Arabic with English translation</p>
+    </section>
+
+    <!-- QURAN CONTENT -->
+    <main class="quran-reader" id="reader">
+      <p class="loading">Loading verses…</p>
+    </main>
+
+  </div>
+
+</div>
+
+<!-- AUDIO -->
+<audio id="audio"></audio>
+
+<script src="quran-read.js"></script>
+</body>
+</html>
