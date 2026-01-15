@@ -8,35 +8,86 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
-<header class="navbar">
-  <div class="container nav-flex">
-    <div class="logo">IslamicPlatform</div>
-    <nav>
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <h3 class="sidebar-logo">IslamicPlatform</h3>
+
+    <nav class="sidebar-nav">
       <a href="index.html">Home</a>
-      <a href="quran.html">Quran</a>
+      <a href="quran.html" class="active">Al Quran</a>
       <a href="#">Prayer Times</a>
-      <a href="#">Learn</a>
+      <a href="#">Islamic Calendar</a>
+      <a href="#">Hadith</a>
+      <a href="#">Duas</a>
+      <a href="#">Qibla Direction</a>
     </nav>
+  </aside>
+
+  <!-- MOBILE HEADER -->
+  <header class="mobile-header">
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <div class="mobile-title">Al-Qur’an</div>
+    <div class="container surah-search">
+  <input
+    type="text"
+    id="surahSearch"
+    placeholder="Search Surah (name, number, Makki/Madani)…"
+  />
+</div>
+
+  </header>
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+
+    <!-- PAGE HEADER -->
+    <section class="quran-page-header">
+      <h1>Al-Qur’an</h1>
+      <p>Read and listen to the Holy Qur’an</p>
+    </section>
+
+    <!-- SURAH GRID -->
+    <main class="quran-grid" id="surahGrid">
+      <p class="loading">Loading Surahs…</p>
+    </main>
+
   </div>
-</header>
+</div>
 
-<!-- QURAN HEADER -->
-<section class="quran-page-header">
-  <div class="container">
-    <h1>Al-Qur’an</h1>
-    <p>Read and listen to the Holy Qur’an</p>
-  </div>
-</section>
-
-<!-- SURAH GRID -->
-<main class="container quran-grid" id="surahGrid">
-  <p class="loading">Loading Surahs…</p>
-</main>
-
-<!-- AUDIO (GLOBAL PLAYER) -->
 <audio id="audio"></audio>
 
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Platform</h4>
+      <a href="#">Prayer Times</a>
+      <a href="#">Quran</a>
+      <a href="#">Duas</a>
+    </div>
+    <div>
+      <h4>Tools</h4>
+      <a href="#">Qibla</a>
+      <a href="#">Calendar</a>
+      <a href="#">Zakat</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="#">About</a>
+      <a href="#">Privacy</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+
 <script src="quran.list.js"></script>
+<script src="layout.js"></script>
 </body>
 </html>

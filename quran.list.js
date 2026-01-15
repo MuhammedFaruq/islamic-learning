@@ -72,3 +72,17 @@ function openSurah(id) {
 
 /* INIT */
 loadSurahs();
+
+
+
+const searchInput = document.getElementById("surahSearch");
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  const cards = document.querySelectorAll(".surah-card");
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(query) ? "flex" : "none";
+  });
+});

@@ -430,11 +430,41 @@ nav a {
   padding: 3rem 0;
 }
 
+
+/* ===== MOBILE: 3 SURAH CARDS PER ROW ===== */
+@media (max-width: 768px) {
+  .quran-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    padding: 1.5rem 0;
+  }
+
+  .surah-card {
+    padding: 0.9rem;
+    border-radius: 10px;
+  }
+
+  .surah-name {
+    font-size: 0.9rem;
+  }
+
+  .arabic {
+    font-size: 1rem;
+  }
+
+  .meta,
+  .count {
+    font-size: 0.7rem;
+  }
+}
+
+
 /* Card */
 .surah-card {
   background: #0a8f4e;
   border: 1px solid #e6e6e6;
   border-radius: 10px;
+  color: #fff;
   padding: 1.2rem 1.4rem;
   display: flex;
   justify-content: space-between;
@@ -471,7 +501,7 @@ nav a {
 
 .meta {
   font-size: 0.8rem;
-  color: #666;
+  color: #040404;
 }
 
 /* Right */
@@ -500,15 +530,173 @@ nav a {
 
 
 
+/* =========================
+   APP LAYOUT (QURAN LIST)
+========================= */
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;  
+  background: #0f172a;
+}
+
+
+/* =========================
+   SIDEBAR DESKTOP
+========================= */
+
+.sidebar {
+  width: 240px;
+  background: #020617;
+  color: #e5e7eb;
+  padding: 1.5rem 1rem;
+
+  position: fixed;      /* ✅ FIXED */
+  top: 0;
+  left: 0;
+  height: 100vh;
+
+  overflow-y: auto;     /* sidebar scrolls ONLY if menu is long */
+  z-index: 1000;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+  flex: 1;
+  margin-left: 240px;
+  padding: 1.5rem 1rem 4rem;
+}
+
+/* =========================
+   MOBILE HEADER
+========================= */
+
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: #020617;
+  color: #fff;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  z-index: 1200;
+}
+
+.mobile-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.menu-toggle {
+  display: none;
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 900;
+}
+
+/* =========================
+   MOBILE MODE
+========================= */
+
+@media (max-width: 768px) {
+
+  @media (max-width: 768px) {
+
+  .sidebar {
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;     
+    padding-top: 56px;
+  }
+}
+
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .overlay.show {
+    display: block;
+  }
+
+  .main-content {
+    padding-top: 56px;
+  }
+}
+
+
+.sidebar-nav a {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  color: #cbd5e1;   
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-nav a:hover {
+  background: #1e293b;
+}
+
+.sidebar-nav a.active {
+  background: #1e293b;
+  color: #22c55e;
+  font-weight: 500;
+}
+
+
+
 /* =====================
    QURAN READER LAYOUT
 ===================== */
 
 .quran-reader {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1rem 4rem;
+  margin: 0 auto;   /* CENTER CONTENT */
+  width: 100%;
 }
+
 
 #surahTitle {
   text-align: center;
@@ -522,7 +710,7 @@ nav a {
 }
 
 /* =====================
-   AYAH BLOCK (STRUCTURE FIX)
+   AYAH BLOCK
 ===================== */
 
 .ayah {
@@ -621,198 +809,27 @@ nav a {
 
 
 
-/* =========================
-   APP LAYOUT
-========================= */
-
-.app-layout {
-  display: flex;
-  height: 100vh;       /* lock viewport */
-  overflow: hidden;   /* prevent body scrolling */
-  background: #0f172a;
-}
-
 
 /* =========================
-   SIDEBAR
+   SURAH SEARCH BAR
 ========================= */
 
-.sidebar {
-  width: 240px;
-  background: #020617;
-  color: #e5e7eb;
-  padding: 1.5rem 1rem;
-
-  position: fixed;    /* FIXED sidebar */
-  top: 0;
-  left: 0;
-  height: 100vh;
-
-  overflow-y: auto;   /* sidebar scrolls ONLY if menu is long */
-  z-index: 1000;
+.surah-search {
+  margin: 1.rem auto 0;
 }
 
-
-/* NAV LINKS */
-
-.sidebar-nav a {
-  display: block;
-  padding: 0.6rem 0.8rem;
-  color: #cbd5e1;
-  text-decoration: none;
+.surah-search input {
+  width:100%;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
   font-size: 0.95rem;
-  border-radius: 6px;
-  margin-bottom: 0.25rem;
+  outline: none;
+  background: #ffffff;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
-.sidebar-nav a:hover {
-  background: #1e293b;
-}
-
-.sidebar-nav a.active {
-  background: #1e293b;
-  color: #22c55e;
-  font-weight: 500;
-}
-
-/* =========================
-   MAIN CONTENT
-========================= */
-
-.main-content {
-  margin-left: 240px;   /* space for sidebar */
-  flex: 1;
-
-  height: 100vh;
-  overflow-y: auto;     /* ONLY content scrolls */
-  padding: 1.5rem 1rem 3rem;
-}
-
-
-/* =========================
-   MOBILE MENU BUTTON
-========================= */
-
-.menu-toggle {
-  display: none;
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  background: #2e7d32;
-  color: white;
-  border: none;
-  font-size: 1.5rem;
-  padding: 0.4rem 0.7rem;
-  border-radius: 6px;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-/* =========================
-   OVERLAY
-========================= */
-
-.overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 900;
-}
-
-/* =========================
-   MOBILE MODE
-========================= */
-
-@media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-  }
-
-  .sidebar.open {
-    transform: translateX(0);
-  }
-
-  .main-content {
-    margin-left: 0;
-  }
-
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .overlay.show {
-    display: block;
-  }
-
-}
-
-/* =========================
-   DESKTOP
-========================= */
-
-@media (min-width: 769px) {
-  .sidebar {
-    position: sticky;
-    transform: none;
-  }
-
-  .main-content {
-    margin-left: 240px;
-  }
-}
-
-
-
-/* =====================
-   PLAY BUTTONS
-===================== */
-
-/* Desktop play button */
-.ayah-play-desktop {
-  background: #2e7d32;
-  color: white;
-  border: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-/* Mobile play button hidden by default */
-.ayah-play-mobile {
-  display: none;
-}
-
-/* =====================
-   MOBILE MODE
-===================== */
-
-@media (max-width: 768px) {
-  /* Hide desktop play button on mobile */
-  .ayah-play-desktop {
-    display: none;
-  }
-
-  /* Show mobile play button */
-  .ayah-play-mobile {
-    display: block;
-    margin-top: 1rem;
-    width: 100%;
-    padding: 0.75rem;
-    border-radius: 8px;
-    border: none;
-    background: #2e7d32;
-    color: white;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-  }
-}
-
-.ayah.playing .ayah-play-desktop,
-.ayah.playing .ayah-play-mobile {
-  background: #1b5e20;
+.surah-search input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(10, 143, 78, 0.15);
 }
