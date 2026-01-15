@@ -436,11 +436,11 @@ nav a {
   .quran-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
-    padding: 1.2rem 0;
+    padding: 1.2rem ;
   }
 
   .surah-card {
-    padding: 0.9rem;
+    padding: 0.3rem;
     border-radius: 10px;
   }
 
@@ -465,7 +465,7 @@ nav a {
   border: 1px solid #e6e6e6;
   border-radius: 10px;
   color: #fff;
-  padding: 1.2rem 1.4rem;
+  padding: 1.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -550,7 +550,7 @@ nav a {
   color: #e5e7eb;
   padding: 1.5rem 1rem;
 
-  position: fixed;      /* ✅ FIXED */
+  position: fixed;   
   top: 0;
   left: 0;
   height: 100vh;
@@ -818,7 +818,7 @@ nav a {
 }
 
 .surah-search input {
-  width:100%;
+  width:80%;
   padding: 0.6rem 1rem;
   border-radius: 10px;
   border: 1px solid var(--border);
