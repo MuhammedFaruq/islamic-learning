@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hadith</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <h3 class="sidebar-logo">IslamicPlatform</h3>
+    <nav class="sidebar-nav">
+      <a href="index.html">Home</a>
+      <a href="quran.html">Quran</a>
+      <a href="hadith.html" class="active">Hadith</a>
+      <a href="#">Prayer Times</a>
+      <a href="#">Duas</a>
+    </nav>
+  </aside>
+
+  <!-- MOBILE HEADER -->
+  <header class="mobile-header">
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <div class="mobile-title">Hadith</div>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <h1 id="bookTitle">Sahih Al-Bukhari</h1>
+      <p class="hadith-meta">
+        Complete Collection • 7563 Hadith
+      </p>
+    </section>
+
+    <!-- BOOK SELECT -->
+    <div class="hadith-filter">
+      <select id="bookSelect">
+        <option value="sahih-bukhari">Sahih Bukhari</option>
+        <option value="sahih-muslim">Sahih Muslim</option>
+        <option value="Sunan-Abu Dawood">Sunan-Abu Dawood</option>
+        <option value="Sunan ibn E Majah">Sunan ibn E Majah</option>
+        <option value="Jami Al Tirmizi">Jami Al Tirmizi</option>
+      </select>
+    </div>
+
+   <!-- CHAPTER LIST (DEFAULT VIEW) -->
+<section id="chapterView" class="chapter-list">
+
+  <div class="chapter-item" data-chapter="1">
+    <h3>The Book of Revelation</h3>
+    <span>Hadith 1 – 7</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="2">
+    <h3>The Book of Belief</h3>
+    <span>Hadith 8 – 58</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="3">
+    <h3>The Book of Knowledge</h3>
+    <span>Hadith 59 – 134</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="4">
+    <h3>The Book of Ablution (Wudu)</h3>
+    <span>Hadith 135 – 247</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="5">
+    <h3>The Book of Bathing (Ghusl)</h3>
+    <span>Hadith 248 – 293</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="6">
+    <h3>The Book of Menstrual Periods</h3>
+    <span>Hadith 294 – 333</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="7">
+    <h3>The Book of Tayammum</h3>
+    <span>Hadith 334 – 348</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="8">
+    <h3>The Book of Prayer (Salat)</h3>
+    <span>Hadith 349 – 520</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="9">
+    <h3>The Book of Times of the Prayers</h3>
+    <span>Hadith 521 – 602</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="10">
+    <h3>The Book of Adhan</h3>
+    <span>Hadith 603 – 875</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="11">
+    <h3>The Book of Friday Prayer</h3>
+    <span>Hadith 876 – 941</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="12">
+    <h3>The Book of Fear Prayer</h3>
+    <span>Hadith 942 – 947</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="13">
+    <h3>The Book of Eid Prayers</h3>
+    <span>Hadith 948 – 989</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="14">
+    <h3>The Book of Witr Prayer</h3>
+    <span>Hadith 990 – 1004</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="15">
+    <h3>The Book of Invoking Allah for Rain</h3>
+    <span>Hadith 1005 – 1039</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="16">
+    <h3>The Book of Eclipses</h3>
+    <span>Hadith 1040 – 1066</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="17">
+    <h3>The Book of Prostration during Recital</h3>
+    <span>Hadith 1067 – 1079</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="18">
+    <h3>The Book of Shortening the Prayers</h3>
+    <span>Hadith 1080 – 1119</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="19">
+    <h3>The Book of Tahajjud Prayer</h3>
+    <span>Hadith 1120 – 1187</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="20">
+    <h3>The Book of Virtues of Prayer</h3>
+    <span>Hadith 1188 – 1197</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="21">
+    <h3>The Book of Actions during Prayer</h3>
+    <span>Hadith 1198 – 1223</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="22">
+    <h3>The Book of Forgetfulness in Prayer</h3>
+    <span>Hadith 1224 – 1236</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="23">
+    <h3>The Book of Funerals</h3>
+    <span>Hadith 1237 – 1394</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="24">
+    <h3>The Book of Zakat</h3>
+    <span>Hadith 1395 – 1512</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="25">
+    <h3>The Book of Hajj</h3>
+    <span>Hadith 1513 – 1772</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="26">
+    <h3>The Book of Umrah</h3>
+    <span>Hadith 1773 – 1805</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="27">
+    <h3>The Book of Pilgrims Prevented from Completing Hajj</h3>
+    <span>Hadith 1806 – 1816</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="28">
+    <h3>The Book of Penalty of Hunting</h3>
+    <span>Hadith 1817 – 1866</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="29">
+    <h3>The Book of Virtues of Madinah</h3>
+    <span>Hadith 1867 – 1880</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="30">
+    <h3>The Book of Fasting</h3>
+    <span>Hadith 1881 – 2007</span>
+  </div>
+
+<div class="chapter-item" data-chapter="31">
+  <h3>The Book of I'tikaf</h3>
+  <span>Hadith 2029 – 2046</span>
+</div>
+
+<div class="chapter-item" data-chapter="32">
+  <h3>The Book of Night Prayer in Ramadan (Taraweeh)</h3>
+  <span>Hadith 2008 – 2013</span>
+</div>
+
+<div class="chapter-item" data-chapter="33">
+  <h3>The Book of Virtues of the Night of Qadr</h3>
+  <span>Hadith 2014 – 2024</span>
+</div>
+
+<div class="chapter-item" data-chapter="34">
+  <h3>The Book of Jihad</h3>
+  <span>Hadith 2782 – 3090</span>
+</div>
+
+<div class="chapter-item" data-chapter="35">
+  <h3>The Book of One-fifth of Booty</h3>
+  <span>Hadith 3091 – 3155</span>
+</div>
+
+<div class="chapter-item" data-chapter="36">
+  <h3>The Book of Beginning of Creation</h3>
+  <span>Hadith 3190 – 3325</span>
+</div>
+
+<div class="chapter-item" data-chapter="37">
+  <h3>The Book of Prophets</h3>
+  <span>Hadith 3326 – 3488</span>
+</div>
+
+<div class="chapter-item" data-chapter="38">
+  <h3>The Book of Virtues of the Prophet ﷺ</h3>
+  <span>Hadith 3489 – 3648</span>
+</div>
+
+<div class="chapter-item" data-chapter="39">
+  <h3>The Book of Companions</h3>
+  <span>Hadith 3649 – 3775</span>
+</div>
+
+<div class="chapter-item" data-chapter="40">
+  <h3>The Book of Merits of the Ansar</h3>
+  <span>Hadith 3776 – 3949</span>
+</div>
+
+<div class="chapter-item" data-chapter="41">
+  <h3>The Book of Expeditions</h3>
+  <span>Hadith 3949 – 4474</span>
+</div>
+
+<div class="chapter-item" data-chapter="42">
+  <h3>The Book of Commentary on the Qur’an</h3>
+  <span>Hadith 4475 – 4977</span>
+</div>
+
+<div class="chapter-item" data-chapter="43">
+  <h3>The Book of Virtues of the Qur’an</h3>
+  <span>Hadith 4978 – 5023</span>
+</div>
+
+<div class="chapter-item" data-chapter="44">
+  <h3>The Book of Wedlock (Marriage)</h3>
+  <span>Hadith 5063 – 5250</span>
+</div>
+
+<div class="chapter-item" data-chapter="45">
+  <h3>The Book of Divorce</h3>
+  <span>Hadith 5251 – 5350</span>
+</div>
+
+<div class="chapter-item" data-chapter="46">
+  <h3>The Book of Expiation for Unfulfilled Oaths</h3>
+  <span>Hadith 6621 – 6707</span>
+</div>
+
+<div class="chapter-item" data-chapter="47">
+  <h3>The Book of Invocations</h3>
+  <span>Hadith 6306 – 6411</span>
+</div>
+
+<div class="chapter-item" data-chapter="48">
+  <h3>The Book of Heart-Softening Traditions</h3>
+  <span>Hadith 6412 – 6593</span>
+</div>
+
+<div class="chapter-item" data-chapter="49">
+  <h3>The Book of Divine Will</h3>
+  <span>Hadith 6594 – 6620</span>
+</div>
+
+<div class="chapter-item" data-chapter="50">
+  <h3>The Book of Oaths and Vows</h3>
+  <span>Hadith 6621 – 6707</span>
+</div>
+
+<div class="chapter-item" data-chapter="51">
+  <h3>The Book of Legal Punishments</h3>
+  <span>Hadith 6772 – 6859</span>
+</div>
+
+<div class="chapter-item" data-chapter="52">
+  <h3>The Book of Blood Money</h3>
+  <span>Hadith 6861 – 6917</span>
+</div>
+
+<div class="chapter-item" data-chapter="53">
+  <h3>The Book of Afflictions</h3>
+  <span>Hadith 7052 – 7136</span>
+</div>
+
+<div class="chapter-item" data-chapter="54">
+  <h3>The Book of Judgments</h3>
+  <span>Hadith 7137 – 7225</span>
+</div>
+
+<div class="chapter-item" data-chapter="55">
+  <h3>The Book of Wishes</h3>
+  <span>Hadith 7226 – 7243</span>
+</div>
+
+<div class="chapter-item" data-chapter="56">
+  <h3>The Book of Truthful Dreams</h3>
+  <span>Hadith 6989 – 7047</span>
+</div>
+
+<div class="chapter-item" data-chapter="57">
+  <h3>The Book of Funerals (Final)</h3>
+  <span>Hadith 1237 – 1394</span>
+</div>
+
+<div class="chapter-item" data-chapter="58">
+  <h3>The Book of Etiquette</h3>
+  <span>Hadith 5971 – 6068</span>
+</div>
+
+<div class="chapter-item" data-chapter="59">
+  <h3>The Book of Asking Permission</h3>
+  <span>Hadith 6245 – 6305</span>
+</div>
+
+<div class="chapter-item" data-chapter="60">
+  <h3>The Book of Medicine</h3>
+  <span>Hadith 5356 – 5747</span>
+</div>
+
+<div class="chapter-item" data-chapter="61">
+  <h3>The Book of Dress</h3>
+  <span>Hadith 5782 – 5969</span>
+</div>
+
+<div class="chapter-item" data-chapter="62">
+  <h3>The Book of Food</h3>
+  <span>Hadith 5376 – 5478</span>
+</div>
+
+<div class="chapter-item" data-chapter="63">
+  <h3>The Book of Sacrifice</h3>
+  <span>Hadith 5545 – 5580</span>
+</div>
+
+<div class="chapter-item" data-chapter="64">
+  <h3>The Book of Hunting</h3>
+  <span>Hadith 5479 – 5544</span>
+</div>
+
+<div class="chapter-item" data-chapter="65">
+  <h3>The Book of Slaughtering</h3>
+  <span>Hadith 5500 – 5544</span>
+</div>
+
+<div class="chapter-item" data-chapter="66">
+  <h3>The Book of Drinks</h3>
+  <span>Hadith 5581 – 5619</span>
+</div>
+
+<div class="chapter-item" data-chapter="67">
+  <h3>The Book of Patients</h3>
+  <span>Hadith 5641 – 5678</span>
+</div>
+
+<div class="chapter-item" data-chapter="68">
+  <h3>The Book of Riqaq (Softening)</h3>
+  <span>Hadith 6412 – 6593</span>
+</div>
+
+<div class="chapter-item" data-chapter="69">
+  <h3>The Book of End of the World</h3>
+  <span>Hadith 7121 – 7136</span>
+</div>
+
+<div class="chapter-item" data-chapter="70">
+  <h3>The Book of Monotheism (Tawheed)</h3>
+  <span>Hadith 7378 – 7563</span>
+</div>
+
+
+</section>
+
+
+
+    <!-- HADITH VIEW (HIDDEN INITIALLY) -->
+    <section id="hadithView" style="display:none">
+      <button id="backToChapters" class="back-btn">
+        ← Back to Chapters
+      </button>
+
+      <div id="hadithList"></div>
+    </section>
+
+  </div>
+</div>
+
+<script src="layout.js"></script>
+<script src="Hadith.js"></script>
+</body>
+</html>
+
