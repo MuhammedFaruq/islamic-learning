@@ -8,13 +8,21 @@
 </head>
 <body>
 
-<!-- TOP PRAYER BAR (will be updated by JS later) -->
+<!-- TOP PRAYER BAR -->
 <div class="top-bar">
-  <div class="container">
+  <div class="container top-bar-flex">
     <div class="prayer-info" id="topPrayer">
-      Loading prayer time…
+      Loading prayer times…
     </div>
-    <a href="#" class="link">All Prayer Times →</a>
+
+    <div class="city-search">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Search city…"
+      />
+      <button id="searchCity">Search</button>
+    </div>
   </div>
 </div>
 
@@ -22,14 +30,19 @@
 <header class="navbar">
   <div class="container nav-flex">
     <div class="logo">Deen Islam</div>
-    <nav>
-      <a href="">Prayer Times</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#">Prayer Times</a>
       <a href="quran.html">Quran</a>
-      <a href="#">Learn</a>
+      <a href="hadith.html">Hadith</a>
       <a href="#">Calendar</a>
     </nav>
+
+    <!-- HAMBURGER -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
   </div>
 </header>
+
 
 <!-- HERO -->
 <section class="hero">

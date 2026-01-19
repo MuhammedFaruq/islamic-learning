@@ -26,6 +26,14 @@
   <header class="mobile-header">
     <button class="menu-toggle" id="menuToggle">☰</button>
     <div class="mobile-title">Hadith</div>
+    <!-- CHAPTER SEARCH -->
+<div class="chapter-search">
+  <input
+    type="text"
+    id="chapterSearch"
+    placeholder="Search chapter"
+  />
+</div>
   </header>
 
   <div class="overlay" id="overlay"></div>
@@ -46,16 +54,21 @@
       <select id="bookSelect">
         <option value="sahih-bukhari">Sahih Bukhari</option>
         <option value="sahih-muslim">Sahih Muslim</option>
-        <option value="Sunan-Abu Dawood">Sunan-Abu Dawood</option>
+        <option value="sunan-abi-dawud">Sunan Abi Dawud</option>
         <option value="Sunan ibn E Majah">Sunan ibn E Majah</option>
         <option value="Jami Al Tirmizi">Jami Al Tirmizi</option>
       </select>
     </div>
 
-   <!-- CHAPTER LIST (DEFAULT VIEW) -->
+
+
+ <!-- CHAPTER LIST -->
 <section id="chapterView" class="chapter-list">
 
-  <div class="chapter-item" data-chapter="1">
+  <!-- SAHIH BUKHARI -->
+  <div class="book-chapters" data-book="sahih-bukhari">
+
+     <div class="chapter-item" data-chapter="1">
     <h3>The Book of Revelation</h3>
     <span>Hadith 1 – 7</span>
   </div>
@@ -405,9 +418,307 @@
   <span>Hadith 7378 – 7563</span>
 </div>
 
+    
+  </div>
+
+  <!-- SAHIH MUSLIM -->
+  <div class="book-chapters" data-book="sahih-muslim" style="display:none">
+
+
+    <div class="chapter-item" data-chapter="1">
+      <h3>Introduction</h3>
+      <span>Hadith 1 – 25</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="2">
+      <h3>The Book of Faith</h3>
+      <span>Hadith 26 – 188</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="3">
+      <h3>The Book of Purification</h3>
+      <span>Hadith 189 – 535</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="4">
+      <h3>The Book of Prayer</h3>
+      <span>Hadith 536 – 1187</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="5">
+      <h3>The Book of Zakat</h3>
+      <span>Hadith 1188 – 1782</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="6">
+      <h3>The Book of Fasting</h3>
+      <span>Hadith 1783 – 1934</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="7">
+      <h3>The Book of Hajj</h3>
+      <span>Hadith 1935 – 2158</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="8">
+      <h3>The Book of Marriage</h3>
+      <span>Hadith 2159 – 2550</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="9">
+      <h3>The Book of Divorce</h3>
+      <span>Hadith 2551 – 2920</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="10">
+      <h3>The Book of Jihad</h3>
+      <span>Hadith 2921 – 3354</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="11">
+      <h3>The Book of Virtues</h3>
+      <span>Hadith 3355 – 3644</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="12">
+      <h3>The Book of Paradise</h3>
+      <span>Hadith 3645 – 3890</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="13">
+      <h3>The Book of Tribulations</h3>
+      <span>Hadith 3891 – 4218</span>
+    </div>
+
+    <div class="chapter-item" data-chapter="14">
+      <h3>The Book of Ethics</h3>
+      <span>Hadith 4219 – 7561</span>
+    </div>
+
+  </div>
+
+
+<!-- SUNAN ABI DAWUD CHAPTERS -->
+<div class="book-chapters" data-book="sunan-abi-dawud" style="display:none">
+
+  <div class="chapter-item" data-chapter="1">
+    <h3>Purification (Taharah)</h3>
+    <span>Book 1</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="2">
+    <h3>Prayer (Salat)</h3>
+    <span>Book 2</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="3">
+    <h3>Prayer Travel</h3>
+    <span>Book 3</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="4">
+    <h3>Prayer Rain</h3>
+    <span>Book 4</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="5">
+    <h3>Zakat</h3>
+    <span>Book 5</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="6">
+    <h3>Lost and Found</h3>
+    <span>Book 6</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="7">
+    <h3>Rituals of Hajj</h3>
+    <span>Book 7</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="8">
+    <h3>Marriage</h3>
+    <span>Book 8</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="9">
+    <h3>Divorce</h3>
+    <span>Book 9</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="10">
+    <h3>Fasting</h3>
+    <span>Book 10</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="11">
+    <h3>Jihad</h3>
+    <span>Book 11</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="12">
+    <h3>Sacrifice</h3>
+    <span>Book 12</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="13">
+    <h3>Hunting</h3>
+    <span>Book 13</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="14">
+    <h3>Wills</h3>
+    <span>Book 14</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="15">
+    <h3>Inheritance</h3>
+    <span>Book 15</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="16">
+    <h3>Oaths & Vows</h3>
+    <span>Book 16</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="17">
+    <h3>Commercial Transactions</h3>
+    <span>Book 17</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="18">
+    <h3>Judgments</h3>
+    <span>Book 18</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="19">
+    <h3>Knowledge</h3>
+    <span>Book 19</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="20">
+    <h3>Drinks</h3>
+    <span>Book 20</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="21">
+    <h3>Foods</h3>
+    <span>Book 21</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="22">
+    <h3>Medicine</h3>
+    <span>Book 22</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="23">
+    <h3>Divination & Omens</h3>
+    <span>Book 23</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="24">
+    <h3>Manumission of Slaves</h3>
+    <span>Book 24</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="25">
+    <h3>Dialects & Readings</h3>
+    <span>Book 25</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="26">
+    <h3>Hot Baths</h3>
+    <span>Book 26</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="27">
+    <h3>Clothing</h3>
+    <span>Book 27</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="28">
+    <h3>Combing Hair</h3>
+    <span>Book 28</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="29">
+    <h3>Signet Rings</h3>
+    <span>Book 29</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="30">
+    <h3>Trials & Battles</h3>
+    <span>Book 30</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="31">
+    <h3>Mahdi</h3>
+    <span>Book 31</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="32">
+    <h3>Malik & Leadership</h3>
+    <span>Book 32</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="33">
+    <h3>Tribulations</h3>
+    <span>Book 33</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="34">
+    <h3>Ethics & Manners</h3>
+    <span>Book 34</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="35">
+    <h3>Signs of the Hour</h3>
+    <span>Book 35</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="36">
+    <h3>Trials & Fitnah</h3>
+    <span>Book 36</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="37">
+    <h3>Dreams</h3>
+    <span>Book 37</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="38">
+    <h3>Greetings</h3>
+    <span>Book 38</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="39">
+    <h3>General Sunnah</h3>
+    <span>Book 39</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="40">
+    <h3>Trials & Warnings</h3>
+    <span>Book 40</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="41">
+    <h3>Good Character</h3>
+    <span>Book 41</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="42">
+    <h3>Supplications</h3>
+    <span>Book 42</span>
+  </div>
+
+  <div class="chapter-item" data-chapter="43">
+    <h3>Miscellaneous</h3>
+    <span>Book 43</span>
+  </div>
+
+</div>
 
 </section>
-
 
 
     <!-- HADITH VIEW (HIDDEN INITIALLY) -->
@@ -421,6 +732,7 @@
 
   </div>
 </div>
+
 
 <script src="layout.js"></script>
 <script src="Hadith.js"></script>

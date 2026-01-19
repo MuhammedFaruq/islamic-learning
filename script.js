@@ -1,52 +1,3 @@
-async function loadPrayerTimes() {
-  const city = "Kano";        // change later
-  const country = "Nigeria";         // change later
-  const method = 2;             // Islamic Society of North America
-
-  const url = `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=${method}`;
-
-  try {
-    const res = await fetch(url);
-    const data = await res.json();
-    const timings = data.data.timings;
-
-    const prayerGrid = document.getElementById("prayerGrid");
-
-    prayerGrid.innerHTML = `
-      ${createPrayerBox("FAJR", timings.Fajr)}
-      ${createPrayerBox("ZUHR", timings.Dhuhr)}
-      ${createPrayerBox("ASR", timings.Asr)}
-      ${createPrayerBox("MAGHRIB", timings.Maghrib)}
-      ${createPrayerBox("ISHA", timings.Isha)}
-      ${createJummahBox()}
-    `;
-  } catch (error) {
-    document.getElementById("prayerGrid").innerHTML =
-      "<p>Unable to load prayer times.</p>";
-    console.error(error);
-  }
-}
-
-function createPrayerBox(name, time) {
-  return `
-    <div class="prayer-box">
-      <h3>${name}</h3>
-      <p>Begins: <strong>${time}</strong></p>
-    </div>
-  `;
-}
-
-function createJummahBox() {
-  return `
-    <div class="prayer-box jummah">
-      <h3>JUMMAH</h3>
-      <p>Start: <strong>1:30 PM</strong></p>
-    </div>
-  `;
-}
-
-loadPrayerTimes();
-
 
 // ===============================
 // QURAN FULL SURAH PLAYER
@@ -163,3 +114,99 @@ reciterSelect.addEventListener("change", () => {
 
 // Init
 loadAyah(1);
+
+
+
+const prayerEl = document.getElementById("topPrayer");
+const cityInput = document.getElementById("cityInput");
+const searchBtn = document.getElementById("searchCity");
+
+
+/* =========================
+   HAMBURGER
+========================= */
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+/* =========================
+   TOGGLE MENU
+========================= */
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+/* =========================
+   CLOSE MENU ON LINK CLICK
+========================= */
+document.querySelectorAll("#navLinks a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
+
+/* =========================
+   CLOSE MENU WHEN CLICK OUTSIDE
+========================= */
+document.addEventListener("click", (e) => {
+  if (
+    !navLinks.contains(e.target) &&
+    !menuToggle.contains(e.target)
+  ) {
+    navLinks.classList.remove("open");
+  }
+});
+
+
+/* =========================
+   PRAYER TIMES
+========================= */
+async function loadPrayerTimes(city = "Makkah") {
+  prayerEl.textContent = "Loading prayer times…";
+
+  try {
+    const res = await fetch(
+      `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=&method=2`
+    );
+
+    if (!res.ok) throw new Error("Failed");
+
+    const data = await res.json();
+    const t = data.data.timings;
+
+    prayerEl.innerHTML = `
+      Fajr ${t.Fajr} • 
+      Dhuhr ${t.Dhuhr} • 
+      Asr ${t.Asr} • 
+      Maghrib ${t.Maghrib} • 
+      Isha ${t.Isha}
+    `;
+  } catch (err) {
+    prayerEl.textContent = "Unable to load prayer times";
+  }
+}
+
+/* =========================
+   CITY SEARCH
+========================= */
+searchBtn.addEventListener("click", () => {
+  const city = cityInput.value.trim();
+  if (city) loadPrayerTimes(city);
+});
+
+/* =========================
+   AUTO LOAD (USER LOCATION)
+========================= */
+navigator.geolocation?.getCurrentPosition(
+  pos => {
+    fetch(
+      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${pos.coords.latitude}&longitude=${pos.coords.longitude}&localityLanguage=en`
+    )
+      .then(res => res.json())
+      .then(loc => loadPrayerTimes(loc.city || "Makkah"))
+      .catch(() => loadPrayerTimes());
+  },
+  () => loadPrayerTimes()
+);
+
+
+

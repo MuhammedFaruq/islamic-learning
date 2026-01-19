@@ -64,6 +64,7 @@ a {
 .navbar {
   background: var(--white);
   border-bottom: 1px solid var(--border);
+  height: 50px;
 }
 
 .nav-flex {
@@ -77,6 +78,7 @@ a {
   font-weight: 700;
   font-size: 1.1rem;
   margin: 10px;
+  margin-top: -13px;
 }
 
 nav a {
@@ -981,4 +983,120 @@ nav a {
   .hadith-card {
     padding: 1.2rem;
   }
+}
+
+
+.chapter-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: rem;
+}
+
+.chapter-search input {
+  width: 80%;
+  max-width: 200px;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+}
+
+
+
+/* =========================
+   TOP BAR
+========================= */
+.top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1100;
+}
+
+.navbar {
+  position: fixed;
+  top: 55px; /* height of top-bar */
+  width: 100%;
+  z-index: 1000;
+}
+
+body {
+  padding-top: 106px; /* 40 + 64 */
+}
+
+
+.top-bar-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0;
+}
+
+.city-search {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.city-search input {
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.8rem;
+}
+
+.city-search button {
+  background: #2e7d32;
+  border: none;
+  color: #fff;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.menu-toggle {
+  display: none;
+  background: #2e7d32;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: -13px;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #020617;
+    display: none;
+    flex-direction: column;
+    padding: 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .nav-links a{
+    color: #fff;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+  transition: all 0.25s ease;
+}
+
 }

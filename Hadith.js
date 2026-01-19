@@ -8,11 +8,26 @@ const API_KEY = "$2y$10$DxfyArYuFcqBP3jbDRKkJwc227ycNpXKRbTXqbKuxPOdLyO";
 
 let currentBook = "sahih-bukhari";
 
+const chapterContainers = document.querySelectorAll(".book-chapters");
+
 /* =========================
    BOOK CHANGE
 ========================= */
 bookSelect.addEventListener("change", () => {
   currentBook = bookSelect.value;
+
+  // Update title
+  document.getElementById("bookTitle").textContent =
+    currentBook === "sahih-bukhari"
+      ? "Sahih Al-Bukhari"
+      : "Sahih Muslim";
+
+  // Toggle chapter lists
+  chapterContainers.forEach(container => {
+    container.style.display =
+      container.dataset.book === currentBook ? "block" : "none";
+  });
+
   showChapters();
 });
 
@@ -87,3 +102,24 @@ function showChapters() {
   hadithView.style.display = "none";
   chapterView.style.display = "block";
 }
+
+
+
+
+const chapterSearch = document.getElementById("chapterSearch");
+
+chapterSearch.addEventListener("input", () => {
+  const query = chapterSearch.value.toLowerCase();
+
+  // Only search visible book
+  const activeBook = document.querySelector(
+    `.book-chapters[data-book="${currentBook}"]`
+  );
+
+  if (!activeBook) return;
+
+  activeBook.querySelectorAll(".chapter-item").forEach(chapter => {
+    const title = chapter.innerText.toLowerCase();
+    chapter.style.display = title.includes(query) ? "block" : "none";
+  });
+});
