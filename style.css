@@ -1007,23 +1007,10 @@ nav a {
    TOP BAR
 ========================= */
 .top-bar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1100;
+  background: #020617;
+  color: #fff;
+  font-size: 0.75rem;
 }
-
-.navbar {
-  position: fixed;
-  top: 70px; /* height of top-bar */
-  width: 100%;
-  z-index: 1000;
-}
-
-body {
-  padding-top: 104px; /* 40 + 64 */
-}
-
 
 .top-bar-flex {
   display: flex;
