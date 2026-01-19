@@ -1015,13 +1015,13 @@ nav a {
 
 .navbar {
   position: fixed;
-  top: 55px; /* height of top-bar */
+  top: 70px; /* height of top-bar */
   width: 100%;
   z-index: 1000;
 }
 
 body {
-  padding-top: 106px; /* 40 + 64 */
+  padding-top: 104px; /* 40 + 64 */
 }
 
 
