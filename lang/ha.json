@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "quran": "Al-Qur'ani",
+    "hadith": "Hadisi",
+    "prayer": "Lokutan Sallah"
+  },
+  "quran": {
+    "title": "Al-Qur'ani Mai Girma",
+    "subtitle": "Karanta kuma saurari Al-Qur'ani"
+  }
+}

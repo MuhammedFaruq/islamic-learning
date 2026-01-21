@@ -1087,3 +1087,17 @@ nav a {
 }
 
 }
+
+
+
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] .sidebar {
+  text-align: right;
+}
+
+html[dir="rtl"] .ayah-ar {
+  text-align: right;
+}

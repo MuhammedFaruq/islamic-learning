@@ -11,7 +11,7 @@
 <!-- TOP PRAYER BAR -->
 <div class="top-bar">
   <div class="container top-bar-flex">
-    <div class="prayer-info" id="topPrayer">
+    <div class="prayer-info" id="topPrayer" data-i18n="top.loading">
       Loading prayer times…
     </div>
 
@@ -20,8 +20,9 @@
         type="text"
         id="cityInput"
         placeholder="Search city…"
+        data-i18n-placeholder="top.searchCity"
       />
-      <button id="searchCity">Search</button>
+      <button id="searchCity" data-i18n="top.searchBtn">Search</button>
     </div>
   </div>
 </div>
@@ -32,10 +33,16 @@
     <div class="logo">Deen Islam</div>
 
     <nav class="nav-links" id="navLinks">
-      <a href="#">Prayer Times</a>
-      <a href="quran.html">Quran</a>
-      <a href="Hadith.html">Hadith</a>
-      <a href="#">Calendar</a>
+      <a href="#" data-i18n="nav.prayer">Prayer Times</a>
+      <a href="quran.html" data-i18n="nav.quran">Quran</a>
+      <a href="Hadith.html" data-i18n="nav.hadith">Hadith</a>
+      <a href="#" data-i18n="nav.calendar">Calendar</a>
+
+      <select id="languageSwitcher" class="lang-switcher">
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+        <option value="ha">Hausa</option>
+      </select>
     </nav>
 
     <!-- HAMBURGER -->
@@ -43,113 +50,119 @@
   </div>
 </header>
 
-
 <!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
-
     <div class="hero-text">
-      <h1>The modern platform for Islamic life</h1>
-      <p>
-        Prayer times, Quran, learning, reminders and tools
-        designed for Muslims worldwide.
+      <h1 data-i18n="hero.title">
+        The modern platform for Islamic life
+      </h1>
+      <p data-i18n="hero.subtitle">
+        Prayer times, Quran, learning, reminders and tools designed for Muslims worldwide.
       </p>
-      <a href="#" class="btn-primary">Get Started</a>
+      <a href="#" class="btn-primary" data-i18n="hero.cta">Get Started</a>
     </div>
   </div>
 </section>
 
-<!-- ACADEMY WITH REAL QURAN AUDIO -->
+<!-- ACADEMY -->
 <section class="academy">
   <div class="container academy-grid">
 
     <div>
-      <h2>Learn Quran with guidance</h2>
-      <p>Structured programs for recitation and understanding.</p>
-      <a href="#" class="link">Explore programs →</a>
+      <h2 data-i18n="academy.title">Learn Quran with guidance</h2>
+      <p data-i18n="academy.subtitle">
+        Structured programs for recitation and understanding.
+      </p>
+      <a href="#" class="link" data-i18n="academy.link">Explore programs →</a>
     </div>
 
-    <!-- REAL AUDIO PLAYER -->
+    <!-- AUDIO PLAYER -->
     <div class="academy-audio">
-  <div class="audio-player">
+      <div class="audio-player">
+        <button id="prevBtn">⏮</button>
+        <button id="playBtn">▶</button>
+        <button id="nextBtn">⏭</button>
 
-    <button id="prevBtn">⏮</button>
-    <button id="playBtn">▶</button>
-    <button id="nextBtn">⏭</button>
+        <div class="audio-info">
+          <span id="trackTitle">Surah Al-Fatiha · Ayah 1</span>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
 
-    <div class="audio-info">
-      <span id="trackTitle">Surah Al-Fatiha · Ayah 1</span>
-
-      <div class="progress-bar">
-        <div class="progress"></div>
+        <span id="time">0:00</span>
       </div>
+
+      <select id="reciterSelect">
+        <option value="AbdulBaset/Mujawwad">Abdul Baset (Mujawwad)</option>
+        <option value="Mishary_Rashid_Alafasy">Mishary Rashid</option>
+        <option value="Maher_Al_Muaiqly">Maher Al-Muaiqly</option>
+      </select>
+
+      <audio id="quranAudio"></audio>
     </div>
-
-    <span id="time">0:00</span>
-  </div>
-
-  <!-- RECITER SELECTOR -->
-  <select id="reciterSelect">
-    <option value="AbdulBaset/Mujawwad">Abdul Baset (Mujawwad)</option>
-    <option value="Mishary_Rashid_Alafasy">Mishary Rashid</option>
-    <option value="Maher_Al_Muaiqly">Maher Al-Muaiqly</option>
-  </select>
-
-  <audio id="quranAudio"></audio>
-</div>
 
   </div>
 </section>
 
-<!-- FEATURE BLOCKS -->
+<!-- FEATURES -->
 <section class="features">
   <div class="container feature-grid">
 
     <div class="feature light">
-      <h3>Connect with the Ummah</h3>
-      <p>Community, knowledge and events in one place.</p>
+      <h3 data-i18n="features.community">Connect with the Ummah</h3>
+      <p data-i18n="features.communityDesc">
+        Community, knowledge and events in one place.
+      </p>
     </div>
 
     <div class="feature dark">
-      <h3>Tools for daily worship</h3>
-      <p>Qibla, calendar, duas and reminders.</p>
+      <h3 data-i18n="features.tools">Tools for daily worship</h3>
+      <p data-i18n="features.toolsDesc">
+        Qibla, calendar, duas and reminders.
+      </p>
     </div>
 
   </div>
 </section>
 
-<!-- BLOG + EVENTS -->
+<!-- INFO -->
 <section class="info-section">
   <div class="container info-grid">
 
     <div class="info-box">
-      <h3>Latest Knowledge</h3>
+      <h3 data-i18n="info.knowledge">Latest Knowledge</h3>
       <ul>
-        <li>The importance of Rajab</li>
-        <li>Managing stress Islamically</li>
-        <li>Raising practicing children</li>
+        <li data-i18n="info.k1">The importance of Rajab</li>
+        <li data-i18n="info.k2">Managing stress Islamically</li>
+        <li data-i18n="info.k3">Raising practicing children</li>
       </ul>
-      <a href="#" class="btn-secondary">See all articles</a>
+      <a href="#" class="btn-secondary" data-i18n="info.readMore">
+        See all articles
+      </a>
     </div>
 
     <div class="info-box">
-      <h3>Islamic Events</h3>
-      <ul class="events">
+      <h3 data-i18n="info.events">Islamic Events</h3>
+      <ul>
         <li>Shab e Meraj — Jan 17</li>
         <li>Ramadan — Feb 18</li>
         <li>Eid ul Fitr — Mar 20</li>
       </ul>
-      <a href="#" class="btn-secondary">View calendar</a>
+      <a href="#" class="btn-secondary" data-i18n="info.calendar">
+        View calendar
+      </a>
     </div>
 
   </div>
 </section>
 
-<!-- PRAYER TIMES (API-DRIVEN) -->
+<!-- PRAYER TIMES -->
 <section class="prayer-section">
   <div class="prayer-container">
-    <span class="section-tag">Associated Mosque</span>
-    <h2 class="section-title">Namaz Timings</h2>
+    <span class="section-tag" data-i18n="prayer.tag">Associated Mosque</span>
+    <h2 class="section-title" data-i18n="prayer.title">Namaz Timings</h2>
     <div class="divider"></div>
 
     <div class="prayer-grid" id="prayerGrid">
@@ -162,19 +175,19 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div>
-      <h4>Platform</h4>
-      <a href="#">Prayer Times</a>
-      <a href="#">Quran</a>
-      <a href="#">Duas</a>
+      <h4 data-i18n="footer.platform">Platform</h4>
+      <a href="#" data-i18n="nav.prayer">Prayer Times</a>
+      <a href="#" data-i18n="nav.quran">Quran</a>
+      <a href="#" data-i18n="nav.duas">Duas</a>
     </div>
     <div>
-      <h4>Tools</h4>
+      <h4 data-i18n="footer.tools">Tools</h4>
       <a href="#">Qibla</a>
       <a href="#">Calendar</a>
       <a href="#">Zakat</a>
     </div>
     <div>
-      <h4>Company</h4>
+      <h4 data-i18n="footer.company">Company</h4>
       <a href="#">About</a>
       <a href="#">Privacy</a>
       <a href="#">Contact</a>
@@ -183,5 +196,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>

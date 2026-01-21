@@ -37,9 +37,9 @@ async function loadSurah() {
     `;
 
     // Verses
-    const res = await fetch(
-      `https://api.quran.com/api/v4/verses/by_chapter/${surah}?translations=131&language=en&fields=text_uthmani`
-    );
+   const res = await fetch(
+  `https://api.quran.com/api/v4/verses/by_chapter/${surah}?translations=131&language=en&fields=text_uthmani&per_page=300`
+);
     const data = await res.json();
 
     reader.innerHTML = "";

@@ -1,0 +1,11 @@
+{
+  "nav": {
+    "quran": "Quran",
+    "hadith": "Hadith",
+    "prayer": "Prayer Times"
+  },
+  "quran": {
+    "title": "Al-Qur’an",
+    "subtitle": "Read and listen to the Holy Qur’an"
+  }
+}
